@@ -1,0 +1,16 @@
+%h1 Static Web Pages
+%p.lead Browser a collection of static 1 page html webpages
+%hr
+.row
+  - @pages.each do |page|
+    .col-3
+      .card
+        .card-header
+          = page.route
+        .card-body
+          = page.name
+        .card-footer
+          .float-left
+            = link_to 'View Page', page_path(:route => page.route.gsub("/",""))
+          .float-right
+            %span{ class: "badge badge-pill badge-#{page.active ? 'success' : 'danger'}"} &nbsp;

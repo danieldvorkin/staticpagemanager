@@ -1,0 +1,10 @@
+<%= render partial: "breadcrumb" %>
+<%= render partial: "errors", locals: { errors: @resource.errors } %>
+
+<%= form_for @resource do |f| %>
+    <%= f.input :name %>
+    <%= f.input :html %>
+    <%= f.input :active %>
+    <%= f.select :project, Project.all.map{|p| [p.name, p.id]}, {}, data: { behavior: "select-box" }, multiple: false %>
+    <%= f.submit %>
+<% end %>

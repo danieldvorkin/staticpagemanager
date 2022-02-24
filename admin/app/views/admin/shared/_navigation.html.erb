@@ -1,3 +1,6 @@
-<%= navbar_item "Home", "/" %>
-<%= navbar_item "Pages", Page %>
-
+<%= navbar_dropdown "Menu" do %>
+    <%= navbar_item "Home", "/" %>
+    <%= navbar_divider %>
+    <%= navbar_item "Projects", Project %>
+    <%= navbar_item "Pages", Page %>
+<% end %>

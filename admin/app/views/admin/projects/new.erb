@@ -1,0 +1,10 @@
+<%= render partial: "breadcrumb" %>
+<%= render partial: "errors", locals: { errors: @resource.errors } %>
+
+<%= form_for @resource do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :active %>
+    <%= f.select :pages, Page.all.map{|p| [p.name, p.id]}, {}, data: { behavior: "select-box" }, multiple: true %>
+    <%= f.submit %>
+<% end %>

@@ -13,7 +13,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    - showingPageView = controller.controller_name == "pages" && controller.action_name != "show"
+    - showingPageView = ["pages", "projects"].include?(controller.controller_name) && controller.action_name != "show"
     - if showingPageView
       = render partial: 'layouts/navbar'
     %main{:role => "main", :style => "margin-top:#{showingPageView ? 80 : 0}px;", class: "#{showingPageView ? 'container-fluid' : ''}"}

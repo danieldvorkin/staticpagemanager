@@ -1,0 +1,12 @@
+<table class="table">
+  <% @resource_service.attrs_for_show.slice(0, @resource_service.attrs_for_show.length - 1).each do |attr| %>
+    <tr>
+      <th><%= @resource_class.human_attribute_name(attr) %></th>
+      <td><%= column_value(@resource, attr) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <th>Pages</th>
+    <td><%= @resource.pages.map{ |p| p.name }.join(", ") %></td>
+  </tr>
+</table>

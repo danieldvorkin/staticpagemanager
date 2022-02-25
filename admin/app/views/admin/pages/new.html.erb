@@ -4,6 +4,7 @@
 <%= form_for @resource do |f| %>
     <%= f.input :name %>
     <%= f.input :html %>
+    <%= f.input :route %>
     <%= f.input :active %>
     <%= f.select :project, Project.all.map{|p| [p.name, p.id]}, {}, data: { behavior: "select-box" }, multiple: false %>
     <%= f.submit %>
